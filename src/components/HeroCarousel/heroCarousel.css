@@ -1,0 +1,41 @@
+/* heroCarousel.css */
+.hero-carousel {
+  max-width: 100%; /* Ensure the carousel does not exceed the width of its container */
+  margin: 0 auto; /* Center the carousel */
+}
+
+.hero-carousel img {
+  width: 100%;
+  max-height: 500px; /* Set a max-height for large displays */
+  object-fit: cover; /* Cover the area without stretching the image */
+  border-radius: 4px;
+}
+
+/* Remove any margin or padding that might cause overflow */
+.slick-slider {
+  margin: 0;
+  padding: 0;
+}
+
+/* Adjustments to slick dots */
+.slick-dots {
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%); /* Center the dots */
+}
+
+.slick-dots li button:before {
+  color: #4caf50; /* Or any color that matches your theme */
+}
+/* This ensures the entire slider is contained within its boundaries */
+.slick-list {
+  overflow: hidden;
+}
+
+.slick-prev,
+.slick-next {
+  display: none !important; /* Hide arrows */
+}
+
+
+  

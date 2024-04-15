@@ -1,0 +1,175 @@
+/* Navbar Styles */
+.navbar {
+  background-color: #f8f8f8;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 80px; 
+}
+
+.navbar-brand {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-logo {
+  height: 60px; /* Larger logo size */
+  width: auto;
+  margin-right: 10px;
+}
+
+.navbar h1 {
+  font-size: 24px; /* Adjusted font size */
+  color: #4caf50; /* Green color from the logo */
+  margin: 0;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #4caf50; /* Green color from the logo */
+  position: relative;
+  padding: 5px 0; /* Padding for the hover effect */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.nav-links li a::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #4caf50; /* Green color from the logo */
+  visibility: hidden;
+  transform: scaleX(0);
+  transition: visibility 0s, transform 0.3s ease;
+}
+
+.nav-links li a:hover,
+.nav-links li a:focus {
+  color: #367a36; /* A darker shade for hover state */
+}
+
+.nav-links li a:hover::before,
+.nav-links li a:focus::before {
+  visibility: visible;
+  transform: scaleX(1);
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .nav-links {
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    padding: 10px 0;
+  }
+}
+/* ... existing styles ... */
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.hamburger-line {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: #333;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .navbar-brand {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-links {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+  }
+
+  .nav-links.expanded {
+    display: flex;
+  }
+
+  .nav-links li {
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    padding: 10px 0;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Rotate hamburger into X and show nav links when expanded */
+  .navbar .hamburger.expanded .hamburger-line:nth-child(1) {
+    transform: translateY(8px) rotate(45deg);
+  }
+
+  .navbar .hamburger.expanded .hamburger-line:nth-child(2) {
+    opacity: 0;
+  }
+
+  .navbar .hamburger.expanded .hamburger-line:nth-child(3) {
+    transform: translateY(-8px) rotate(-45deg);
+  }
+
+  .nav-links li a {
+    /* Remove hover effects */
+    background-color: transparent;
+    color: #4caf50; /* Color of your links */
+  }
+
+  /* Disable hover animations */
+  .nav-links li a::before {
+    content: none;
+  }
+
+  /* Hide the before element which was used for hover animation */
+  .nav-links li a:hover::before,
+  .nav-links li a:focus::before {
+    display: none;
+  }
+}
+

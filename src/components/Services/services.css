@@ -1,0 +1,90 @@
+/* Services Styles */
+.services {
+  background-color: #f7f7f7;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.services h2 {
+  color: #4caf50;
+  margin-bottom: 40px;
+}
+
+.service-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 30px;
+  transition: transform 0.3s ease;
+}
+
+.service-text-content {
+  padding: 20px;
+  flex: 1;
+}
+
+.service-images {
+  flex: 2; /* Allocate twice as much space for the images as for the text */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+.service-image {
+  max-width: 100%; /* Image takes the full width of its container */
+  max-height: 150px; /* Adjust max-height as needed */
+  object-fit: contain; /* Ensure the image is fully visible and maintain aspect ratio */
+}
+
+.service-title {
+  font-size: 2em; /* Larger size for the title */
+  color: #367a36;
+  margin: 20px 0;
+}
+
+.service-description, .service-full-description {
+  color: #333;
+}
+
+.service-list {
+  list-style-type: none; /* Remove default list styling */
+  padding: 0;
+  text-align: left;
+}
+
+.see-more-btn {
+  background-color: transparent;
+  color: #4caf50;
+  border: 2px solid #4caf50;
+  padding: 5px 15px;
+  border-radius: 15px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: block; /* Ensure the button doesn't affect the image layout */
+  margin: 10px auto; /* Center the button below the text */
+}
+
+.see-more-btn:hover {
+  background-color: #4caf50;
+  color: white;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .service-section {
+    flex-direction: column;
+  }
+
+  .service-images {
+    width: 100%; /* Let the images take full width on smaller screens */
+  }
+
+  .service-image {
+    max-width: 100%; /* Allow image to fill the space */
+    max-height: 300px; /* Bigger images on small screens */
+  }
+}

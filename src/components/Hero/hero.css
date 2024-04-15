@@ -1,0 +1,28 @@
+/* Hero Styles */
+
+.hero {
+  background-color: #ffffff;
+  color: #333333;
+  padding: 50px 20px; /* Make sure padding does not cause overflow */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* This will center the carousel horizontally */
+  justify-content: center;
+}
+
+
+.hero h2 {
+  font-family: 'Arial', sans-serif;
+  color: #4caf50; /* Green color from the logo */
+}
+
+.hero p {
+  font-family: 'Arial', sans-serif;
+}
+
+/* If you want to include the logo in the Hero section */
+.hero-logo {
+  max-width: 128px; /* Logo size */
+  margin: 0 auto 20px;
+}
