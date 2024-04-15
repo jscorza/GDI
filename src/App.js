@@ -11,8 +11,8 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      {/* <Hero />
-      <Services /> */}
+      <Hero />
+      <Services /> 
       <Footer />
     </div>
   );
