@@ -1,56 +1,54 @@
 import React, { useState } from 'react';
 import './services.css';
 
-function ServiceSection({ title, shortDescription, fullDescription, serviceList, imageSrcs }) {
+function ServiceSection({ title, shortDescription, fullDescription, imageSrc }) {
   const [showMore, setShowMore] = useState(false);
 
   return (
     <div className="service-section">
-      <div className="service-text-content">
-        <h3 className="service-title">{title}</h3>
-        <p className="service-description">{shortDescription}</p>
-        <button className="see-more-btn" onClick={() => setShowMore(!showMore)}>
-          {showMore ? 'See Less' : 'See More'}
-        </button>
-        {showMore && (
-          <>
-            <p className="service-full-description">{fullDescription}</p>
-            <ul className="service-list">
-              {serviceList.map((service, index) => (
-                <li key={index}>{service}</li>
-              ))}
-            </ul>
-          </>
-        )}
+      <h3 className="service-title">{title}</h3>
+      <p className="service-description">{shortDescription}</p>
+      <div className="service-images">
+        <img src={imageSrc} alt="Service" className="service-image" />
       </div>
-      <div className={`service-images ${showMore ? 'show-more' : ''}`}>
-        {imageSrcs.map((src, index) => (
-          <img key={index} src={src} alt={`Service ${index + 1}`} className="service-image" />
-        ))}
+      <button className="see-more-btn" onClick={() => setShowMore(!showMore)}>
+        {showMore ? 'See Less' : 'See More'}
+      </button>
+      <div className={`service-full-description ${showMore ? 'open' : 'closed'}`}>
+        {fullDescription}
       </div>
     </div>
   );
 }
 
 function Services() {
-  const exampleImageSrcs = ['/img/services/excel.png','/img/services/powerbi.png']; // Replace with actual image paths
+  const servicesData = [
+    {
+      title: "Essential Analytics Package",
+      shortDescription: "Gain actionable insights with custom dashboards for soil health and crop yields.",
+      fullDescription: "This package offers detailed analytics on soil composition, nutrient levels, and crop yield predictions based on historical data and predictive modeling, helping farmers optimize their outputs.",
+      imageSrc: "/img/services/tier1GDI.png"
+    },
+    {
+      title: "Advanced Analytics Suite",
+      shortDescription: "Advanced predictive analytics for optimal planting and harvesting.",
+      fullDescription: "Leverage deep learning algorithms and advanced predictive models to determine the best planting and harvesting times, improving yields and reducing costs.",
+      imageSrc: "/img/services/tier2GDI.png"
+    },
+    {
+      title: "Premium Consulting Pack",
+      shortDescription: "Top Tier Personalized consulting for enterprise-level solutions.",
+      fullDescription: "Get bespoke consulting services tailored to large-scale agricultural operations, including integration of IoT devices for precision farming and customized ERP solutions.",
+      imageSrc: "/img/services/tier3GDI.png"
+    }
+  ];
 
   return (
-    <div className="services">
+    <div className="services" id='services'>
       <h2>Our Services</h2>
-      <ServiceSection
-        title="Essential Analytics Package"
-        shortDescription="Gain actionable insights with custom dashboards for soil health and crop yields."
-        fullDescription="Start making data-driven decisions with comprehensive analytics on soil nutrients, seasonal yields, and resource management. Our dashboards help you visualize and understand the data that matters most to your farm's performance."
-        serviceList={[
-          "Custom Agricultural Dashboards",
-          "Soil Health Reports",
-          "Seasonal Yield Analysis",
-          "Resource Allocation Insights"
-        ]}
-        imageSrcs={exampleImageSrcs} // Replace with actual image paths
-      />
-      {/* Repeat ServiceSection for other services as needed */}
+      {servicesData.map(service => (
+        <ServiceSection key={service.title} {...service} />
+      ))}
     </div>
   );
 }

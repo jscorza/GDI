@@ -1,5 +1,6 @@
 /* heroCarousel.css */
 .hero-carousel {
+  margin-top: 10px;
   max-width: 100%; /* Ensure the carousel does not exceed the width of its container */
   margin: 0 auto; /* Center the carousel */
 }

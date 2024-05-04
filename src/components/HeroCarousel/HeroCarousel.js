@@ -15,7 +15,7 @@ function HeroCarousel() {
   };
 
   return (
-    <div className="hero-carousel">
+    <div className="hero-carousel" id='top'>
       <Slider {...settings}>
         <div>
           <img src="/img/heroCarousel/campo4.jpg" alt="First slide" />

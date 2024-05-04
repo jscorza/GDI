@@ -7,22 +7,26 @@
   justify-content: space-between;
   align-items: center;
   height: 80px; 
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
 .navbar-brand {
   display: flex;
   align-items: center;
+  cursor: pointer;
 }
 
 .navbar-logo {
-  height: 60px; /* Larger logo size */
+  height: 60px;
   width: auto;
   margin-right: 10px;
 }
 
 .navbar h1 {
-  font-size: 24px; /* Adjusted font size */
-  color: #4caf50; /* Green color from the logo */
+  font-size: 24px;
+  color: #4caf50;
   margin: 0;
 }
 
@@ -34,36 +38,19 @@
   padding: 0;
 }
 
-.nav-links li a {
-  text-decoration: none;
-  color: #4caf50; /* Green color from the logo */
-  position: relative;
-  padding: 5px 0; /* Padding for the hover effect */
-  transition: color 0.3s ease; /* Smooth color transition */
+.nav-links li {
+  cursor: pointer;
+  color: #4caf50; /* Matching link color for consistency */
 }
 
-.nav-links li a::before {
-  content: '';
-  position: absolute;
-  width: 100%;
-  height: 2px;
-  bottom: 0;
-  left: 0;
-  background-color: #4caf50; /* Green color from the logo */
-  visibility: hidden;
-  transform: scaleX(0);
-  transition: visibility 0s, transform 0.3s ease;
-}
-
-.nav-links li a:hover,
-.nav-links li a:focus {
+.nav-links li:hover {
   color: #367a36; /* A darker shade for hover state */
 }
 
-.nav-links li a:hover::before,
-.nav-links li a:focus::before {
-  visibility: visible;
-  transform: scaleX(1);
+.nav-links li a {
+  text-decoration: none;
+  color: inherit; /* Inherits color from li for simplicity */
+  padding: 5px 0;
 }
 
 @media (max-width: 768px) {
@@ -75,101 +62,26 @@
   .nav-links {
     flex-direction: column;
     width: 100%;
-    gap: 0;
-  }
-
-  .nav-links li {
-    width: 100%;
-    text-align: center;
-  }
-
-  .nav-links li a {
-    width: 100%;
-    padding: 10px 0;
-  }
-}
-/* ... existing styles ... */
-
-.hamburger {
-  display: none;
-  flex-direction: column;
-  gap: 5px;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
-}
-
-.hamburger-line {
-  display: block;
-  width: 25px;
-  height: 3px;
-  background-color: #333;
-}
-
-@media (max-width: 768px) {
-  .navbar {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .navbar-brand {
-    width: 100%;
-    justify-content: space-between;
-  }
-
-  .nav-links {
-    display: none;
-    flex-direction: column;
-    width: 100%;
-    gap: 0;
+    display: none; /* Initially hidden on mobile */
   }
 
   .nav-links.expanded {
-    display: flex;
+    display: flex; /* Show on toggle */
   }
 
   .nav-links li {
     width: 100%;
     text-align: center;
   }
-
-  .nav-links li a {
-    width: 100%;
-    padding: 10px 0;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  /* Rotate hamburger into X and show nav links when expanded */
-  .navbar .hamburger.expanded .hamburger-line:nth-child(1) {
-    transform: translateY(8px) rotate(45deg);
-  }
-
-  .navbar .hamburger.expanded .hamburger-line:nth-child(2) {
-    opacity: 0;
-  }
-
-  .navbar .hamburger.expanded .hamburger-line:nth-child(3) {
-    transform: translateY(-8px) rotate(-45deg);
-  }
-
-  .nav-links li a {
-    /* Remove hover effects */
-    background-color: transparent;
-    color: #4caf50; /* Color of your links */
-  }
-
-  /* Disable hover animations */
-  .nav-links li a::before {
-    content: none;
-  }
-
-  /* Hide the before element which was used for hover animation */
-  .nav-links li a:hover::before,
-  .nav-links li a:focus::before {
-    display: none;
-  }
 }
 
+.hamburger {
+  display: none; /* Adjust for mobile view */
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block; /* Show hamburger menu on smaller screens */
+  }
+}

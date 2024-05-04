@@ -1,0 +1,46 @@
+.about-us {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+    background-color: #f4f4f4; /* Light gray background */
+  }
+  
+  .about-us-content {
+    max-width: 600px;
+    text-align: center;
+  }
+  
+  .about-us h2 {
+    color: #285C4D; /* Dark green, similar to your title colors */
+    font-size: 45px;
+    padding-bottom: 50px;
+    
+  }
+  
+  .about-us p {
+    font-size: 1.25em;
+    color: #666;
+    line-height: 1.5;
+  }
+  
+  .about-us-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Optional: rounds the corners of the image */
+  }
+  
+  @media (min-width: 768px) {
+    .about-us {
+      flex-direction: row; /* Horizontal layout on wider screens */
+      justify-content: center;
+      align-items: center;
+    }
+  
+    .about-us-content, .about-us-image {
+      flex: 1; /* Each takes half of the container */
+    }
+  }
+  
