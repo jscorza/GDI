@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import './contact.css'; // Ensure the CSS file is correctly linked
+import './contact.css';
+import emailjs from 'emailjs-com'; // Import EmailJS
 
 function Contact() {
     const [name, setName] = useState('');
@@ -9,8 +10,25 @@ function Contact() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-        alert(`Thank you for your message, ${name}! We will get back to you shortly.`);
-        // Here you would normally handle the submission e.g., via API
+
+        // Prepare the data to send
+        const formData = {
+            name,
+            email,
+            category,
+            message,
+            to_email: email  // assuming you want to send it to the user's email
+        };
+
+        // EmailJS sending function
+        emailjs.send('service_0airzng', 'template_q440lqf', formData, 'VBK8HocYtDbHENiiX')
+            .then((response) => {
+                console.log('SUCCESS!', response.status, response.text);
+                alert("Your query has been received, it will be answered shortly.");
+            }, (error) => {
+                console.log('FAILED...', error);
+                alert("Failed to send the message, please try again.");
+            });
     };
 
     return (
