@@ -17,7 +17,6 @@ function Contact() {
             email,
             category,
             message,
-            to_email: email  // assuming you want to send it to the user's email
         };
 
         // EmailJS sending function

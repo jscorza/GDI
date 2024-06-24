@@ -26,6 +26,7 @@ function Navbar() {
       <ul className={`nav-links ${isNavExpanded ? "expanded" : ""}`}>
         <li onClick={() => scrollToSection('#services')}>Services</li>
         <li onClick={() => scrollToSection('#about')}>About Us</li>
+        <li onClick={() => scrollToSection('#quotation')}>Quotation</li>
         <li onClick={() => scrollToSection('#contact')}>Contact</li>
       </ul>
     </nav>

@@ -8,6 +8,7 @@ import Footer from './components/Footer/Footer';
 import './App.css';
 import AboutUs from './components/AboutUs/AboutUs';
 import Contact from './components/Contact/Contact';
+import Quotation from './components/Quotation/Quotation';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Hero />
       <Services /> 
       <AboutUs/>
+      <Quotation /> 
       <Contact/>
       <Footer />
     </div>

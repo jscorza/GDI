@@ -1,0 +1,81 @@
+.quotation-section {
+    background: #f4f4f4;
+    border: 1px solid #ccc;
+    padding: 20px;
+    border-radius: 8px;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .quotation-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* Para hacer que los elementos se envuelvan en pantallas pequeñas */
+  }
+  
+  .quotation-title {
+    width: 100%; /* Ensures the title is alone on its line */
+    color: #285C4D; /* Dark green, similar to your title colors */
+    font-size: 45px;
+    padding-top: 30px;
+      
+  }
+  
+  .quotation-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    width: 100%;
+    max-width: 50%; /* Limita el ancho del formulario */
+  }
+  
+  .quotation-form label {
+    font-size: 1em;
+    color: #666;
+    width: 100%; /* Asegura que el label ocupe el ancho completo */
+    text-align: left;
+  }
+  
+  .quotation-form input, .quotation-form select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 200px;
+    margin-top: 5px;
+  }
+  
+  .quotation-result {
+    margin-top: 15px;
+    font-size: 1.2em;
+    color: #285C4D;
+    text-align: center;
+    background-color: #fdfdfdb5;
+    padding: 5px;
+    border-radius: 20px;
+  }
+  
+  .quotation-image {
+    width: 100%;
+    max-width: 45%; /* Limita el ancho de la imagen */
+    display: flex;
+    justify-content: center;
+  }
+  
+  .quotation-image img {
+    width: 100%;
+    border-radius: 8px;
+  }
+  
+  @media (max-width: 767px) {
+    .quotation-form {
+      max-width: 100%; /* Ajusta el formulario para pantallas pequeñas */
+    }
+    .quotation-image {
+      max-width: 100%; /* Ajusta la imagen para pantallas pequeñas */
+      margin-top: 20px; /* Añade espacio superior en pantallas pequeñas */
+    }
+  }
+  
